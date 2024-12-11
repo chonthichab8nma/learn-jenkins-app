@@ -8,6 +8,7 @@ pipeline {
             agent{
                 docker{
                     image 'node:18-alpine'
+                    reuseNode true
                 }
             }
             steps {
@@ -23,6 +24,7 @@ pipeline {
                 sh '''
                     echo "without docker"
                     touch "without-container.txt"
+                    touch "test.txt
                 '''
             }
         }
